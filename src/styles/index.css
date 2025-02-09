@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.mainBg {
+  @apply bg-gradient-to-b from-gray-900 to-gray-950;
+}
+
+.body {
+  @apply antialiased min-h-screen mainBg text-gray-100 flex flex-col;
+}
