@@ -47,6 +47,34 @@ body {
   @apply flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white rounded-lg transition-all duration-200 font-medium shadow-lg shadow-blue-500/20;
 }
 
+.themeSelected {
+  @apply w-48 relative flex items-center gap-2 px-4 py-2.5 bg-[#1e1e2e]/80 hover:bg-[#262637] rounded-lg transition-all duration-200 border border-gray-800/50 hover:border-gray-700;
+}
+
+.themeSelectedHover {
+  @apply absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity;
+}
+
+.themeDropdownList {
+  @apply absolute top-full left-0 mt-2 w-full min-w-[240px] bg-[#1e1e2e]/95 backdrop-blur-xl rounded-xl border border-[#313244] shadow-2xl py-2 z-50;
+}
+
+.themeListBtn {
+  @apply relative w-full flex items-center gap-3 px-3 py-2.5 hover:bg-[#262637] transition-all duration-200;
+}
+
+.themeListBtnBg {
+  @apply absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity;
+}
+
+.themeListBtnIcon {
+  @apply flex items-center justify-center size-8 rounded-lg group-hover:scale-110 transition-all duration-200;
+}
+
+.themeListBtnColorIndicator {
+  @apply relative size-4 rounded-full border border-gray-600 group-hover:border-gray-500 transition-colors;
+}
+
 .footerLinks {
   @apply hover:text-gray-300 transition-colors;
 }

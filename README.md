@@ -17,11 +17,13 @@ npx convex dev
 ## ⚙️ Dependencies:-
 
 * npx create-next-app@15.0.3 .
-* npm i @clerk/nextjs
 * npm i convex
+* npm i @clerk/nextjs
 * npm i svix --legacy-peer-deps
+* npm i zustand --legacy-peer-deps
 * npm i lucide-react --legacy-peer-deps
-* npm i @monaco-editor/react -legacy-peer-deps
+* npm i framer-motion --legacy-peer-deps
+* npm i @monaco-editor/react --legacy-peer-deps
 
 ## 🔐 DB & Auth Setup Links:-
 
