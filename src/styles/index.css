@@ -75,6 +75,46 @@ body {
   @apply relative size-4 rounded-full border border-gray-600 group-hover:border-gray-500 transition-colors;
 }
 
+.languageSelected {
+  @apply relative flex items-center gap-3 px-4 py-2.5 bg-[#1e1e2e]/80 rounded-lg transition-all duration-200 border border-gray-800/50 hover:border-gray-700;
+}
+
+.languageSelectedDecoration {
+  @apply absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/50 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity;
+}
+
+.languageDropdownList {
+  @apply absolute top-full left-0 mt-2 w-64 bg-[#1e1e2e]/95 backdrop-blur-xl rounded-xl border border-[#313244] shadow-2xl py-2 z-50;
+}
+
+.languageBtnDecorator { 
+ @apply absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity;
+}
+
 .footerLinks {
   @apply hover:text-gray-300 transition-colors;
+}
+
+body,
+.languageScrollbar {
+  &::-webkit-scrollbar {
+    @apply  w-1.5 h-1.5;
+  }
+
+  &::-webkit-scrollbar-track {
+    @apply rounded bg-slate-700 !important
+  }
+
+  &::-webkit-scrollbar-thumb {
+    @apply rounded bg-slate-500 !important
+  }
+
+  &::-webkit-scrollbar-thumb:hover,
+  &::-webkit-scrollbar-thumb:active {
+    @apply hover:bg-slate-400 duration-300 cursor-move !important
+  }
+
+  &::-webkit-scrollbar-corner {
+      @apply bg-slate-700 !important;
+  }
 }

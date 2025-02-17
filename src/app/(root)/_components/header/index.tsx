@@ -3,7 +3,7 @@ import { currentUser } from "@clerk/nextjs/server";
 import { ConvexHttpClient } from "convex/browser";
 import { SignedIn } from "@clerk/nextjs";
 import HeaderProfileBtn from "./HeaderProfileBtn";
-import LanguageSelector from "./LanguageSelector";
+import LanguageSelector from "./languageSelector";
 import ThemeSelector from "./themeSelector";
 import Snippets from "./links/Snippets";
 import RunButton from "./RunButton";

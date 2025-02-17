@@ -86,3 +86,9 @@ export type Snippet = {
   title: string;
   userName: string;
 };
+
+export type LanguagePropType = {
+  setIsOpen: (isOpen: boolean) => void;
+  hasAccess: boolean;
+  isOpen: boolean;
+};
