@@ -1,4 +1,4 @@
-import EditorPanel from "./_components/EditorPanel";
+import EditorPanel from "./_components/editorPanel";
 import OutputPanel from "./_components/OutputPanel";
 import Header from "./_components/header";
 
