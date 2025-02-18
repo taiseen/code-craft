@@ -35,9 +35,17 @@ export const useCodeEditorStore = create<CodeEditorState>((set, get) => {
         error: null,
         editor: null,
         isRunning: false,
+        isMinimapOpen: false,
         executionResult: null,
 
         getCode: () => get().editor?.getValue() || "",
+
+        setMinimapOpen: () => {
+            set((state) => ({
+                ...state,
+                isMinimapOpen: !state.isMinimapOpen
+            }));
+        },
 
         setEditor: (editor: Monaco) => {
             const savedCode = localStorage.getItem(`editor-code-${get().language}`);

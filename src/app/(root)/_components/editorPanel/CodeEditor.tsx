@@ -6,9 +6,10 @@ import { Editor } from "@monaco-editor/react";
 import { useClerk } from "@clerk/nextjs";
 
 const CodeEditor = () => {
-  const clerk = useClerk();
+  const clerk = useClerk(); // if clerk is loaded, then editor will be mounted
 
-  const { language, theme, fontSize, setEditor } = useCodeEditorStore();
+  const { language, theme, fontSize, isMinimapOpen, setEditor } =
+    useCodeEditorStore();
 
   const handleEditorChange = (value: string | undefined) => {
     if (value) localStorage.setItem(`editor-code-${language}`, value);
@@ -17,7 +18,7 @@ const CodeEditor = () => {
   const editorConfigOptions = {
     fontSize,
     automaticLayout: true,
-    minimap: { enabled: false },
+    minimap: { enabled: isMinimapOpen },
     scrollBeyondLastLine: false,
     padding: { top: 16, bottom: 16 },
     contextmenu: true,
@@ -38,17 +39,20 @@ const CodeEditor = () => {
 
   return (
     <div className="relative group rounded-xl overflow-hidden ring-1 ring-white/[0.05]">
-      {clerk.loaded && (
-        <Editor
-          height="600px"
-          theme={theme}
-          onChange={handleEditorChange}
-          beforeMount={defineMonacoThemes}
-          onMount={(editor) => setEditor(editor)}
-          language={LanguageConfig[language].monacoLanguage}
-          options={editorConfigOptions}
-        />
-      )}
+      {
+        // if clerk is loaded, then editor will be mounted
+        clerk.loaded && (
+          <Editor
+            height="600px"
+            theme={theme}
+            onChange={handleEditorChange}
+            beforeMount={defineMonacoThemes}
+            onMount={(editor) => setEditor(editor)}
+            language={LanguageConfig[language].monacoLanguage}
+            options={editorConfigOptions}
+          />
+        )
+      }
 
       {!clerk.loaded && <CodeEditorSkeleton />}
     </div>

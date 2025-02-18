@@ -9,8 +9,16 @@ type EditorHeaderType = {
 };
 
 const EditorHeader = ({ setIsShareDialogOpen }: EditorHeaderType) => {
-  const { language, editor, fontSize, setFontSize } = useCodeEditorStore();
+  const {
+    setMinimapOpen,
+    setFontSize,
+    isMinimapOpen,
+    fontSize,
+    language,
+    editor,
+  } = useCodeEditorStore();
 
+  // update font size when change
   const handleFontSizeChange = (newSize: number) => {
     const size = Math.min(Math.max(newSize, 12), 24);
 
@@ -18,7 +26,8 @@ const EditorHeader = ({ setIsShareDialogOpen }: EditorHeaderType) => {
     localStorage.setItem("editor-font-size", size.toString());
   };
 
-  const handleRefresh = () => {
+  // update font size when change
+  const handleResetLanguage = () => {
     const defaultCode = LanguageConfig[language].defaultCode;
 
     if (editor) editor.setValue(defaultCode);
@@ -44,15 +53,29 @@ const EditorHeader = ({ setIsShareDialogOpen }: EditorHeaderType) => {
       </div>
 
       <div className="flex items-center gap-3">
+        <div className="relative flex items-center gap-1 justify-center text-gray-400">
+          <input
+            id="minimap"
+            type="checkbox"
+            checked={isMinimapOpen}
+            onChange={setMinimapOpen}
+            className="appearance-none w-4 h-4 rounded-sm bg-gray-600 checked:bg-blue-500 mb-0.5 duration-300"
+          />
+          {isMinimapOpen && (
+            <span className="absolute top-0 left-px text-black">✔</span>
+          )}
+          <label htmlFor="minimap">Mini Map</label>
+        </div>
+
         {/* Font Size Slider */}
         <div className="flex items-center gap-3 px-3 py-2 bg-[#1e1e2e] rounded-lg ring-1 ring-white/5">
           <TypeIcon className="size-4 text-gray-400" />
 
           <div className="flex items-center gap-3">
             <input
-              type="range"
               min="12"
               max="24"
+              type="range"
               value={fontSize}
               onChange={(e) => handleFontSizeChange(parseInt(e.target.value))}
               className="w-20 h-1 bg-gray-600 rounded-lg cursor-pointer"
@@ -64,10 +87,10 @@ const EditorHeader = ({ setIsShareDialogOpen }: EditorHeaderType) => {
         </div>
 
         <motion.button
-          title="Reset"
+          title="Reset to default code"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          onClick={handleRefresh}
+          onClick={handleResetLanguage}
           aria-label="Reset to default code"
           className="p-2 bg-[#1e1e2e] hover:bg-[#2a2a3a] rounded-lg ring-1 ring-white/5 transition-colors"
         >

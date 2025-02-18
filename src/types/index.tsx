@@ -63,6 +63,7 @@ export type CodeEditorState = {
   language: string;
   output: string;
   isRunning: boolean;
+  isMinimapOpen: boolean;
   error: string | null;
   theme: string;
   fontSize: number;
@@ -71,6 +72,7 @@ export type CodeEditorState = {
 
   setEditor: (editor: Monaco) => void;
   getCode: () => string;
+  setMinimapOpen: () => void;
   setLanguage: (language: string) => void;
   setTheme: (theme: string) => void;
   setFontSize: (fontSize: number) => void;
