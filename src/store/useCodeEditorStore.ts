@@ -93,11 +93,12 @@ export const useCodeEditorStore = create<CodeEditorState>((set, get) => {
             set({ isRunning: true, error: null, output: "" });
 
             try {
-                const runtime = LanguageConfig[language].pistonRuntime;
+                const runTime = LanguageConfig[language].pistonRuntime;
 
                 const bodyOfJsonString = JSON.stringify({
-                    language: runtime.language,
-                    version: runtime.version,
+                    language: runTime.language,
+                    version: runTime.version,
+                    // run this code inside server docker...
                     files: [{ content: code }],
                 })
 
@@ -109,7 +110,10 @@ export const useCodeEditorStore = create<CodeEditorState>((set, get) => {
                     body: bodyOfJsonString,
                 }
 
+                // api post request to piston (server docker)
                 const response = await fetch(url, postConfig);
+
+                // get the output response code from the server
                 const data = await response.json();
 
                 console.log("data back from piston:", data);

@@ -91,6 +91,22 @@ body {
  @apply absolute inset-0 bg-gradient-to-r from-blue-500/5 to-purple-500/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity;
 }
 
+.outputArea {
+  @apply relative bg-[#1e1e2e]/50 backdrop-blur-sm border border-[#313244] rounded-xl p-4 h-[600px] overflow-auto font-mono text-sm;
+}
+
+.outputAreaClock {
+  @apply flex items-center justify-center w-12 h-12 rounded-xl bg-gray-800/50 ring-1 ring-gray-700/50 mb-4;
+}
+
+.outputHeaderTerminal {
+  @apply flex items-center justify-center w-6 h-6 rounded-lg bg-[#1e1e2e] ring-1 ring-gray-800/50;
+}
+
+.outputHeaderCopyBtn {
+  @apply flex items-center gap-1.5 px-2.5 py-1.5 text-xs text-gray-400 hover:text-gray-300 bg-[#1e1e2e] rounded-lg ring-1 ring-gray-800/50 hover:ring-gray-700/50 transition-all;
+}
+
 .footerLinks {
   @apply hover:text-gray-300 transition-colors;
 }

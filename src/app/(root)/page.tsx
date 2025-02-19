@@ -1,5 +1,5 @@
 import EditorPanel from "./_components/editorPanel";
-import OutputPanel from "./_components/OutputPanel";
+import OutputPanel from "./_components/outputPanel";
 import Header from "./_components/header";
 
 const Home = () => {
