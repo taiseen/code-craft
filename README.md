@@ -23,6 +23,7 @@ npx convex dev
 * npm i zustand --legacy-peer-deps
 * npm i lucide-react --legacy-peer-deps
 * npm i framer-motion --legacy-peer-deps
+* npm i react-hot-toast --legacy-peer-deps
 * npm i @monaco-editor/react --legacy-peer-deps
 
 ## 🔐 DB & Auth Setup Links:-

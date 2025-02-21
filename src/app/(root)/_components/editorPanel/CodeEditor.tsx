@@ -1,6 +1,6 @@
 import LanguageConfig from "../../_constants/languageConfig";
+import CodeEditorSkeleton from "./CodeEditorSkeleton";
 import { useCodeEditorStore } from "@/store/useCodeEditorStore";
-import { CodeEditorSkeleton } from "./CodeEditorSkeleton";
 import { defineMonacoThemes } from "../../_constants";
 import { Editor } from "@monaco-editor/react";
 import { useClerk } from "@clerk/nextjs";

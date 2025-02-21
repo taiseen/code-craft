@@ -3,7 +3,7 @@
 import { useCodeEditorStore } from "@/store/useCodeEditorStore";
 import { useEffect, useState } from "react";
 import LanguageConfig from "../../_constants/languageConfig";
-// import ShareSnippetDialog from "./ShareSnippetDialog";
+import ShareSnippetDialog from "./ShareSnippetDialog";
 import useMounted from "@/hooks/useMounted";
 import EditorHeader from "./EditorHeader";
 import CodeEditor from "./CodeEditor";
@@ -36,9 +36,9 @@ const EditorPanel = () => {
         <CodeEditor />
       </div>
 
-      {/* {isShareDialogOpen && (
+      {isShareDialogOpen && (
         <ShareSnippetDialog onClose={() => setIsShareDialogOpen(false)} />
-      )} */}
+      )}
     </div>
   );
 };
