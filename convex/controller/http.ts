@@ -1,6 +1,6 @@
 import { WebhookEvent } from "@clerk/nextjs/server";
-import { httpAction } from "./_generated/server";
-import { api, internal } from "./_generated/api";
+import { httpAction } from "../_generated/server";
+import { api } from "../_generated/api";
 import { httpRouter } from "convex/server";
 import { Webhook } from "svix";
 
@@ -33,7 +33,7 @@ const http = httpRouter();
 //                     amount: data.attributes.total,
 //                 }
 
-//                 const { success } = await ctx.runMutation(api.users.upgradeToPro, userData);
+//                 const { success } = await ctx.runMutation(api.controller.users.upgradeToPro, userData);
 
 //                 if (success) {
 //                     // optionally do anything here
@@ -95,7 +95,7 @@ http.route({
 
             try {
                 const userData = { userId: id, email, name };
-                await ctx.runMutation(api.users.syncUser, userData);
+                await ctx.runMutation(api.controller.users.syncUser, userData);
             } catch (error) {
                 console.log("Error creating user:", error);
                 return new Response("Error creating user", { status: 500 });

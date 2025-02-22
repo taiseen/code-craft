@@ -11,7 +11,7 @@ const ShareSnippetDialog = ({ onClose }: { onClose: () => void }) => {
 
   const { language, getCode } = useCodeEditorStore();
 
-  const createSnippet = useMutation(api.snippets.createSnippet);
+  const createSnippet = useMutation(api.controller.snippets.createSnippet);
 
   const handleShare = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -56,13 +56,13 @@ const ShareSnippetDialog = ({ onClose }: { onClose: () => void }) => {
             </label>
 
             <input
-              type="text"
+              required
               id="title"
+              type="text"
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               className="w-full px-3 py-2 bg-[#181825] border border-[#313244] rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Enter snippet title"
-              required
             />
           </div>
 
@@ -88,4 +88,5 @@ const ShareSnippetDialog = ({ onClose }: { onClose: () => void }) => {
     </div>
   );
 };
+
 export default ShareSnippetDialog;

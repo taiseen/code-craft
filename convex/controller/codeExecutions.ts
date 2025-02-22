@@ -1,5 +1,5 @@
 import { paginationOptsValidator } from "convex/server";
-import { mutation, query } from "./_generated/server";
+import { mutation, query } from "../_generated/server";
 import { ConvexError, v } from "convex/values";
 
 export const saveExecution = mutation({
