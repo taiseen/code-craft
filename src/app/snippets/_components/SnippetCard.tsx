@@ -14,7 +14,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const SnippetCard = ({ snippet }: { snippet: Snippet }) => {
-  const deleteSnippet = useMutation(api.controller.snippets.deleteSnippet);
+  const deleteSnippet = useMutation(api.controllers.snippets.deleteSnippet);
 
   const { user } = useUser();
 

@@ -17,7 +17,7 @@ const Header = async () => {
 
   // user info coming from - convex database...
   const userData = { userId: user?.id || "" };
-  const convexUser = await convex.query(api.controller.users.getUser, userData);
+  const convexUser = await convex.query(api.controllers.users.getUser, userData);
 
   return (
     <div className="relative z-10">

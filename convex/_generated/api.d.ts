@@ -13,10 +13,10 @@ import type {
   FilterApi,
   FunctionReference,
 } from "convex/server";
-import type * as controller_codeExecutions from "../controller/codeExecutions.js";
-import type * as controller_http from "../controller/http.js";
-import type * as controller_snippets from "../controller/snippets.js";
-import type * as controller_users from "../controller/users.js";
+import type * as controllers_codeExecutions from "../controllers/codeExecutions.js";
+import type * as controllers_http from "../controllers/http.js";
+import type * as controllers_snippets from "../controllers/snippets.js";
+import type * as controllers_users from "../controllers/users.js";
 
 /**
  * A utility for referencing Convex functions in your app's API.
@@ -27,10 +27,10 @@ import type * as controller_users from "../controller/users.js";
  * ```
  */
 declare const fullApi: ApiFromModules<{
-  "controller/codeExecutions": typeof controller_codeExecutions;
-  "controller/http": typeof controller_http;
-  "controller/snippets": typeof controller_snippets;
-  "controller/users": typeof controller_users;
+  "controllers/codeExecutions": typeof controllers_codeExecutions;
+  "controllers/http": typeof controllers_http;
+  "controllers/snippets": typeof controllers_snippets;
+  "controllers/users": typeof controllers_users;
 }>;
 export declare const api: FilterApi<
   typeof fullApi,

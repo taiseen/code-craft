@@ -11,7 +11,7 @@ const ShareSnippetDialog = ({ onClose }: { onClose: () => void }) => {
 
   const { language, getCode } = useCodeEditorStore();
 
-  const createSnippet = useMutation(api.controller.snippets.createSnippet);
+  const createSnippet = useMutation(api.controllers.snippets.createSnippet);
 
   const handleShare = async (e: React.FormEvent) => {
     e.preventDefault();

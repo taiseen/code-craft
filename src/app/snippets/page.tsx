@@ -13,7 +13,7 @@ import InputFilter from "./_components/InputFilter";
 import HeroArea from "./_components/HeroArea";
 
 const SnippetsPage = () => {
-  const snippets = useQuery(api.controller.snippets.getSnippets);
+  const snippets = useQuery(api.controllers.snippets.getSnippets);
 
   const [selectedLanguage, setSelectedLanguage] = useState<string | null>(null);
   const [view, setView] = useState<"grid" | "list">("grid");

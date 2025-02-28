@@ -33,7 +33,7 @@ const http = httpRouter();
 //                     amount: data.attributes.total,
 //                 }
 
-//                 const { success } = await ctx.runMutation(api.controller.users.upgradeToPro, userData);
+//                 const { success } = await ctx.runMutation(api.controllers.users.upgradeToPro, userData);
 
 //                 if (success) {
 //                     // optionally do anything here
@@ -95,7 +95,7 @@ http.route({
 
             try {
                 const userData = { userId: id, email, name };
-                await ctx.runMutation(api.controller.users.syncUser, userData);
+                await ctx.runMutation(api.controllers.users.syncUser, userData);
             } catch (error) {
                 console.log("Error creating user:", error);
                 return new Response("Error creating user", { status: 500 });
