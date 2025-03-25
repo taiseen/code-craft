@@ -12,7 +12,7 @@ import InputSearch from "./_components/InputSearch";
 import InputFilter from "./_components/InputFilter";
 import HeroArea from "./_components/HeroArea";
 
-const SnippetsPage = () => {
+const SnippetsContainerPage = () => {
   const snippets = useQuery(api.controllers.snippets.getSnippets);
 
   const [selectedLanguage, setSelectedLanguage] = useState<string | null>(null);
@@ -84,4 +84,4 @@ const SnippetsPage = () => {
   );
 };
 
-export default SnippetsPage;
+export default SnippetsContainerPage;
