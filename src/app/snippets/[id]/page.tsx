@@ -3,6 +3,7 @@
 import SnippetLoadingSkeleton from "./_components/SnippetLoadingSkeleton";
 import LanguageConfig from "@/app/(root)/_constants/languageConfig";
 import NavigationHeader from "@/components/NavigationHeader";
+import CopyButton from "./_components/CopyButton";
 import Image from "next/image";
 import { Clock, Code, MessageSquare, User } from "lucide-react";
 import { defineMonacoThemes } from "@/app/(root)/_constants";
@@ -44,28 +45,36 @@ const SnippetById = () => {
                     className="w-full h-full object-contain"
                   />
                 </div>
+
                 <div>
                   <h1 className="text-xl sm:text-2xl font-semibold text-white mb-2">
                     {snippet.title}
                   </h1>
+
                   <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
                     <div className="flex items-center gap-2 text-[#8b8b8d]">
                       <User className="w-4 h-4" />
+
                       <span>{snippet.userName}</span>
                     </div>
+
                     <div className="flex items-center gap-2 text-[#8b8b8d]">
                       <Clock className="w-4 h-4" />
+
                       <span>
                         {new Date(snippet._creationTime).toLocaleDateString()}
                       </span>
                     </div>
+
                     <div className="flex items-center gap-2 text-[#8b8b8d]">
                       <MessageSquare className="w-4 h-4" />
+
                       <span>{comments?.length} comments</span>
                     </div>
                   </div>
                 </div>
               </div>
+
               <div className="inline-flex items-center px-3 py-1.5 bg-[#ffffff08] text-[#808086] rounded-lg text-sm font-medium">
                 {snippet.language}
               </div>
@@ -73,12 +82,14 @@ const SnippetById = () => {
           </div>
 
           {/* Code Editor */}
-          {/* <div className="mb-8 rounded-2xl overflow-hidden border border-[#ffffff0a] bg-[#121218]">
+          <div className="mb-8 rounded-2xl overflow-hidden border border-[#ffffff0a] bg-[#121218]">
             <div className="flex items-center justify-between px-4 sm:px-6 py-4 border-b border-[#ffffff0a]">
               <div className="flex items-center gap-2 text-[#808086]">
                 <Code className="w-4 h-4" />
+                
                 <span className="text-sm font-medium">Source Code</span>
               </div>
+
               <CopyButton code={snippet.code} />
             </div>
 
@@ -102,7 +113,7 @@ const SnippetById = () => {
             />
           </div>
 
-          <Comments snippetId={snippet._id} /> */}
+          {/* <Comments snippetId={snippet._id} /> */}
         </div>
       </main>
     </div>
