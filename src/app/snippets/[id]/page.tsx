@@ -1,10 +1,5 @@
 "use client";
 
-import SnippetLoadingSkeleton from "./_components/SnippetLoadingSkeleton";
-import LanguageConfig from "@/app/(root)/_constants/languageConfig";
-import NavigationHeader from "@/components/NavigationHeader";
-import CopyButton from "./_components/CopyButton";
-import Image from "next/image";
 import { Clock, Code, MessageSquare, User } from "lucide-react";
 import { defineMonacoThemes } from "@/app/(root)/_constants";
 import { Id } from "../../../../convex/_generated/dataModel";
@@ -12,6 +7,12 @@ import { api } from "../../../../convex/_generated/api";
 import { Editor } from "@monaco-editor/react";
 import { useParams } from "next/navigation";
 import { useQuery } from "convex/react";
+import SnippetLoadingSkeleton from "./_components/SnippetLoadingSkeleton";
+import LanguageConfig from "@/app/(root)/_constants/languageConfig";
+import NavigationHeader from "@/components/NavigationHeader";
+import CopyButton from "./_components/CopyButton";
+import Comments from "./_components/Comments";
+import Image from "next/image";
 
 const SnippetById = () => {
   const snippetId = useParams().id;
@@ -86,7 +87,7 @@ const SnippetById = () => {
             <div className="flex items-center justify-between px-4 sm:px-6 py-4 border-b border-[#ffffff0a]">
               <div className="flex items-center gap-2 text-[#808086]">
                 <Code className="w-4 h-4" />
-                
+
                 <span className="text-sm font-medium">Source Code</span>
               </div>
 
@@ -113,7 +114,7 @@ const SnippetById = () => {
             />
           </div>
 
-          {/* <Comments snippetId={snippet._id} /> */}
+          <Comments snippetId={snippet._id} />
         </div>
       </main>
     </div>
