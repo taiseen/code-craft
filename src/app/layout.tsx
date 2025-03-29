@@ -10,7 +10,7 @@ export const metadata = metaInfo;
 const RootLayout = ({ children }: RootLayoutType) => {
   return (
     <ClerkProvider>
-      <html lang="en">
+      <html lang="en" suppressHydrationWarning>
         <body className="body">
           <ConvexClientProvider>{children}</ConvexClientProvider>
 

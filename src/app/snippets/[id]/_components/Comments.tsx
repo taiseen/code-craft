@@ -4,9 +4,9 @@ import { SignInButton, useUser } from "@clerk/nextjs";
 import { useMutation, useQuery } from "convex/react";
 import { MessageSquare } from "lucide-react";
 import { useState } from "react";
+import CommentForm from "./CommentForm";
 import toast from "react-hot-toast";
 import Comment from "./Comment";
-// import CommentForm from "./CommentForm";
 
 const Comments = ({ snippetId }: { snippetId: Id<"snippets"> }) => {
   const { user } = useUser();
@@ -58,17 +58,16 @@ const Comments = ({ snippetId }: { snippetId: Id<"snippets"> }) => {
 
       <div className="p-6 sm:p-8">
         {user ? (
-          <>000</>
+          <CommentForm
+            onSubmit={handleSubmitComment}
+            isSubmitting={isSubmitting}
+          />
         ) : (
-          //   <CommentForm
-          //     onSubmit={handleSubmitComment}
-          //     isSubmitting={isSubmitting}
-          //   />
           <div className="bg-[#0a0a0f] rounded-xl p-6 text-center mb-8 border border-[#ffffff0a]">
             <p className="text-[#808086] mb-4">
               Sign in to join the discussion
             </p>
-            
+
             <SignInButton mode="modal">
               <button className="px-6 py-2 bg-[#3b82f6] text-white rounded-lg hover:bg-[#2563eb] transition-colors">
                 Sign In
